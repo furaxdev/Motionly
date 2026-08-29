@@ -1,5 +1,5 @@
 <resources>
     <style name="Theme.MotionPoints" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowBackground">#F2F2F2</item>
     </style>
 </resources>
