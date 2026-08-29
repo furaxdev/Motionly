@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Motion Points</string>
+    <string name="tile_label">Motion Points</string>
+    <string name="overlay_channel_name">Overlay Motion Points</string>
+    <string name="overlay_notification_text">L\'overlay de points est actif. Appuie ici pour ouvrir l\'app, ou désactive-le depuis le panneau de notifications.</string>
+    <string name="main_instructions">Balaie l\'écran vers le bas, ajoute la tuile \"Motion Points\" au panneau de réglages rapides, puis appuie dessus pour activer ou désactiver l\'overlay.</string>
+    <string name="add_tile_button">Ajouter la tuile au panneau</string>
+    <string name="enable_now_button">Activer maintenant</string>
+    <string name="add_tile_manual_hint">Ouvre le panneau de notifications, appuie sur l\'icône crayon/édition, puis fais glisser \"Motion Points\" dans la zone active.</string>
 </resources>
