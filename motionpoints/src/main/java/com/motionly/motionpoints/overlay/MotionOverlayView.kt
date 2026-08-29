@@ -35,7 +35,7 @@ class MotionOverlayView(context: Context) : View(context) {
     private var offsetY = 0f
 
     private val animator = ValueAnimator.ofFloat(0f, 1f).apply {
-        duration = 16
+        duration = 32
         repeatCount = ValueAnimator.INFINITE
         addUpdateListener { step() }
     }
@@ -53,9 +53,15 @@ class MotionOverlayView(context: Context) : View(context) {
     private fun step() {
         val targetX = (accelX * dotRadiusPx).coerceIn(-maxOffsetPx, maxOffsetPx)
         val targetY = (accelY * dotRadiusPx).coerceIn(-maxOffsetPx, maxOffsetPx)
-        offsetX += (targetX - offsetX) * 0.08f
-        offsetY += (targetY - offsetY) * 0.08f
-        invalidate()
+        val newX = offsetX + (targetX - offsetX) * 0.08f
+        val newY = offsetY + (targetY - offsetY) * 0.08f
+        // Skip redraws once the drift has settled, so the overlay isn't repainting the
+        // whole screen 60 times a second while the phone sits still.
+        if (kotlin.math.abs(newX - offsetX) > 0.05f || kotlin.math.abs(newY - offsetY) > 0.05f) {
+            offsetX = newX
+            offsetY = newY
+            invalidate()
+        }
     }
 
     private fun dotPosition(dot: Dot, w: Float, h: Float): PointF {
