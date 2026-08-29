@@ -1,14 +1,15 @@
 package com.motionly.motionpoints.overlay
 
 import android.app.Activity
-import android.app.ComponentName
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
+import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.graphics.PixelFormat
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -22,7 +23,6 @@ import android.os.Build
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.IBinder
-import android.os.PixelFormat
 import android.service.quicksettings.TileService
 import android.view.WindowManager
 import androidx.core.app.NotificationCompat
